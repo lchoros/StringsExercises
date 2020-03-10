@@ -13,12 +13,14 @@ namespace ConvertFromBase10ToBaseN
 
             string result = string.Empty;
 
-            while (numsToConvert != 0)
+            while (numsToConvert > 0)
             {
-                var reaminder = 
+                var remainder = numsToConvert % baseNum;
+                result = remainder.ToString() + result;
+                numsToConvert /= baseNum;
             }
 
-
+            Console.WriteLine(result);
         }
     }
 }
